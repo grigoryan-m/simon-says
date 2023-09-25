@@ -1,0 +1,56 @@
+*{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.wrapper{
+	width: 100vw;
+	height: 100vh;
+	background-color: lightblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.panel{
+	width: 600px;
+	max-width: calc(100% - 30px);
+	min-height: 250px;
+	height: auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	padding: 10px;
+}
+.buttons{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.button{
+	width: 100px;
+	height: 100px;
+	opacity: 0.4;
+}
+.button:hover{
+	opacity: 0.5;
+}
+.button:active, .active{
+	opacity: 0.9;
+}
+.button.red{
+	background-color: red;
+}
+.button.blue{
+	background-color: blue;
+}
+.button.green{
+	background-color: green;
+}
+.button.yellow{
+	background-color: yellow;
+}
