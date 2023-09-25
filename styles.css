@@ -54,3 +54,8 @@
 .button.yellow{
 	background-color: yellow;
 }
+#restartButton{
+	display: none;
+	padding: 10px;
+	cursor: pointer;
+}

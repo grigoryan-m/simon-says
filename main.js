@@ -1,3 +1,5 @@
+"use strict"
+
 document.addEventListener("DOMContentLoaded", ()=>{
 	const buttons = document.getElementsByClassName("button")
 	,     score = document.getElementById("score");
@@ -26,7 +28,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 	function addToSequence(){
 		correct_sequence += getRandomNumber(4);
-		console.log(correct_sequence);
 		showSequence();
 	}
 
@@ -46,10 +47,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
 	function sleep(ms) {
     		return new Promise(resolve => setTimeout(resolve, ms));
 	}
-	function gameEnded(){
-		for(let i = 0; i < buttons.length; i++){
-			buttons[i].remove();
-		}
-	}
 
+	function gameEnded() {
+	    	 for (let i = buttons.length - 1; i >= 0; i--) {
+       			 buttons[i].remove();
+   		 }
+		score.innerText = "You lost!";
+		document.getElementById("restartButton").style.display = "block";	
+	}
 });
+
+function restart(){
+	location.reload();
+}
