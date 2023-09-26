@@ -13,15 +13,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 	for(let i = 0; i < buttons.length; i++){
 		buttons[i].addEventListener("click", ()=>{
-			user_sequence += i;
-			if(user_sequence.length === correct_sequence.length){
-				if(user_sequence == correct_sequence){
-					score.innerText = user_sequence.length;
-					addToSequence();
-				}else{
-					gameEnded();
+			if(!waiting){
+				user_sequence += i;
+				if(user_sequence.length === correct_sequence.length){
+					if(user_sequence == correct_sequence){
+						score.innerText = user_sequence.length;
+						addToSequence();
+					}else{
+						gameEnded();
+					}
+					user_sequence = '';
 				}
-				user_sequence = '';
 			}
 		});
 	}
